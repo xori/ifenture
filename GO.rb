@@ -26,6 +26,10 @@ class GO
 
 		notFound if !$session.keys.include?(noun)
 		@obj = $session[noun]
+=begin
+	check - @obj.respond_to?(verb)
+	check - @obj.method(verb.to_sym).arity == 2
+=end
 		if !@obj
 			notFound
 		elsif ! @obj.respond_to?(verb)
